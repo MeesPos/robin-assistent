@@ -20,6 +20,11 @@
             </div>
 
             <div class="mt-4">
+                <jet-label for="phone_number" value="Phone Number" />
+                <jet-input id="phone_number" type="tel" class="mt-1 block w-full" v-model="form.phone_number" required />
+            </div>
+
+            <div class="mt-4">
                 <jet-label for="password" value="Password" />
                 <jet-input id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
             </div>
@@ -84,6 +89,7 @@
                     name: '',
                     email: '',
                     password: '',
+                    phone_number: '',
                     password_confirmation: '',
                     terms: false,
                 })

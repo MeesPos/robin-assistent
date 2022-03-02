@@ -18,7 +18,9 @@ class CreateClientRequest extends FormRequest
             'last_name' => 'required',
             'birth_date' => 'required|date',
             'gender' => 'required',
-            'language' => 'required'
+            'language' => 'required',
+            'panic_button' => 'required',
+            'relation' => 'required'
         ];
     }
 }

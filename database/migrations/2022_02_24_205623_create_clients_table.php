@@ -20,6 +20,8 @@ return new class extends Migration
             $table->date('birth_date');
             $table->string('gender');
             $table->string('language');
+            $table->string('panic_button');
+            $table->string('relation');
             $table->timestamps();
         });
     }

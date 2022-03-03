@@ -15,9 +15,7 @@ class CreateClientTest extends TestCase
     /** @test */
     public function it_can_create_an_client()
     {
-        $user = User::factory()->create();
-
-        $this->actingAs($user);
+        $this->actingAs(User::factory()->create());
 
         $this->post('/client', $data = [
             'first_name' => 'John',

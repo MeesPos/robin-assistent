@@ -21,7 +21,7 @@ class CreateClientTest extends TestCase
             'first_name' => 'John',
             'last_name' => 'Doe',
             'birth_date' => Carbon::today()->subYears(30)->toDateString(),
-            'gender' => \App\Enums\GenderEnum::MALE->value,
+            'gender' => GenderEnum::MALE->value,
             'language' => LanguageEnum::NETHERLANDS->value,
             'panic_button' => PanicButtonEnum::CALL->value,
             'relation' => RelationEnum::PROFESSIONAL->value

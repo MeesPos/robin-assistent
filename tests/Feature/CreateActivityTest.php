@@ -27,11 +27,11 @@ class CreateActivityTest extends TestCase
             'end_date' => Carbon::now()->addDays(2)->toDateString(),
             'start_time' => Carbon::now()->addHour()->toTimeString(),
             'end_time' => Carbon::now()->addHours(2)->toTimeString(),
-            'days' => [
+            'days' => json_encode([
                 DaysEnum::MONDAY->value,
                 DaysEnum::WEDNESDAY->value,
                 DaysEnum::SATURDAY->value
-            ]
+            ])
         ])->assertCreated();
 
         $this->assertDatabaseHas('activities', $data);

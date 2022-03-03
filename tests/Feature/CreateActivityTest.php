@@ -4,9 +4,11 @@ namespace Tests\Feature;
 
 use App\Enums\DaysEnum;
 use App\Models\Client;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Tests\TestCase;
 
 class CreateActivityTest extends TestCase
@@ -14,7 +16,9 @@ class CreateActivityTest extends TestCase
     /** @test */
     public function it_can_make_an_activity()
     {
-        $client = Client::factory()->create();
+        $this->actingAs(User::factory()->create());
+
+        $client = Client::factory()->create(['user_id' => Auth::id()]);
 
         $this->post('/activity', $data = [
             'client_id' => $client->getKey(),

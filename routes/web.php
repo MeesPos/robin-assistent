@@ -33,3 +33,4 @@ Route::get('vue-js-grid', function () {
 });
 
 Route::resource('client', \App\Http\Controllers\ClientController::class);
+Route::resource('activity', \App\Http\Controllers\ActivityController::class);

@@ -6,6 +6,7 @@ use App\Enums\GenderEnum;
 use App\Enums\LanguageEnum;
 use App\Enums\PanicButtonEnum;
 use App\Enums\RelationEnum;
+use App\Models\User;
 use Carbon\Carbon;
 use Tests\TestCase;
 
@@ -14,7 +15,9 @@ class CreateClientTest extends TestCase
     /** @test */
     public function it_can_create_an_client()
     {
-        $this->withoutExceptionHandling();
+        $user = User::factory()->create();
+
+        $this->actingAs($user);
 
         $this->post('/client', $data = [
             'first_name' => 'John',

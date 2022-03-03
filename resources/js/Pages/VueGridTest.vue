@@ -10,7 +10,8 @@
             >
                 <template class="grid" #item="{ element }">
                     <div class="cell">
-                        {{ element }}
+                        {{ element.name }}
+                        {{ element.description }}
                     </div>
                 </template>
             </draggable>
@@ -27,7 +28,53 @@ export default {
     name: "VueGridTest",
     data() {
         return {
-            list: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            list: [
+                {
+                    id: 1,
+                    name: 'Test name 1',
+                    description: 'Test description 1'
+                },
+                {
+                    id: 2,
+                    name: 'Test name 2',
+                    description: 'Test description 2'
+                },
+                {
+                    id: 3,
+                    name: 'Test name 3',
+                    description: 'Test description 3'
+                },
+                {
+                    id: 4,
+                    name: 'Test name 4',
+                    description: 'Test description 4'
+                },
+                {
+                    id: 5,
+                    name: 'Test name 5',
+                    description: 'Test description 5'
+                },
+                {
+                    id: 6,
+                    name: 'Test name 6',
+                    description: 'Test description 6'
+                },
+                {
+                    id: 7,
+                    name: 'Test name 7',
+                    description: 'Test description 7'
+                },
+                {
+                    id: 8,
+                    name: 'Test name 8',
+                    description: 'Test description 8'
+                },
+                {
+                    id: 9,
+                    name: 'Test name 9',
+                    description: 'Test description 9'
+                }
+            ]
         }
     },
     methods: {

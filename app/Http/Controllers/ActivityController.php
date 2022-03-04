@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateActivityRequest;
 use App\Models\Activity;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class ActivityController extends Controller
 {
@@ -15,17 +16,12 @@ class ActivityController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create(): \Inertia\Response
     {
-        //
+        return Inertia::render('Activities/Create');
     }
 
     /**

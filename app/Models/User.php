@@ -62,7 +62,7 @@ class User extends Authenticatable implements MustVerifyEmail
      *
      * @return string
      */
-    protected function defaultProfilePhotoUrl()
+    protected function defaultProfilePhotoUrl(): string
     {
         $name = trim(collect(explode(' ', $this->first_name . ' ' . $this->last_name))->map(function ($segment) {
             return mb_substr($segment, 0, 1);

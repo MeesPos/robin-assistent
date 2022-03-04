@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateActivityRequest;
 use App\Models\Activity;
-use App\Services\JsonService;
+use App\Services\ActivityJsonService;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -22,9 +22,9 @@ class ActivityController extends Controller
 
     public function create(): \Inertia\Response
     {
-        dd(JsonService::getAll());
-
-        return Inertia::render('Activities/Create');
+        return Inertia::render('Activities/Create', [
+            'activities' => ActivityJsonService::getAll()
+        ]);
     }
 
     /**

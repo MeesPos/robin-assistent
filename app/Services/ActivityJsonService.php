@@ -2,7 +2,7 @@
 
 namespace App\Services;
 
-class JsonService
+class ActivityJsonService
 {
     public static function getAll(): array
     {

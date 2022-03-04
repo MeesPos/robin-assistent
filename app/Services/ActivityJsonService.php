@@ -6,11 +6,9 @@ class ActivityJsonService
 {
     public static function getAll(): array
     {
-        $files = scandir(resource_path('json'));
-
         $activities = [];
 
-        foreach ($files as $file) {
+        foreach (scandir(resource_path('json')) as $file) {
             if($file !== "." && $file !== ".." && $file !== basename(__FILE__)) {
                 $activity = json_decode(file_get_contents(resource_path("json/$file")));
 

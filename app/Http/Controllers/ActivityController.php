@@ -22,7 +22,7 @@ class ActivityController extends Controller
 
     public function create(): \Inertia\Response
     {
-        dd(JsonService::getJson('test'));
+        dd(JsonService::getAll());
 
         return Inertia::render('Activities/Create');
     }

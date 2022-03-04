@@ -1,6 +1,7 @@
 {
     "name": "Test",
     "unique_key": "test",
+    "image": "https://www.robinassists.me/dashboard/img/activity_icons/2.svg",
     "steps": [
         {
             "image": "https://www.robinassists.me/dashboard/img/pictograms/2.000/2.001_M_EN.png",

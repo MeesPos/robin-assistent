@@ -27,8 +27,6 @@ class ActivityJsonService
 
     public static function getJson($unique_key): array
     {
-        $json = file_get_contents(resource_path("json/$unique_key.json"));
-
-        return json_decode($json);
+        return json_decode(file_get_contents(resource_path("json/$unique_key.json")));
     }
 }

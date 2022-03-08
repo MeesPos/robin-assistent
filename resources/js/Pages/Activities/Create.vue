@@ -18,11 +18,14 @@ export default {
         activities: {
             type: Array,
             required: true
+        },
+        client_id: {
+            required: true
         }
     },
     methods: {
         goToStepsPage(activity) {
-            return this.$inertia.get(`/activity/steps/${activity.unique_key}`);
+            return this.$inertia.get(`/activity/steps/${activity.unique_key}/${this.client_id}`);
         }
     }
 }

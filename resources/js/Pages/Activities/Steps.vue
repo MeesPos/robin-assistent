@@ -58,13 +58,17 @@ export default {
         activity: {
             type: Array,
             required: true
+        },
+        client_id: {
+            required: true
         }
     },
     methods: {
         submit() {
             console.log(this.activity.steps);
             this.$inertia.post(this.route('activity.date-time-info'), {
-                'activity': this.activity
+                'activity': this.activity,
+                'client_id': this.client_id
             });
         }
     },

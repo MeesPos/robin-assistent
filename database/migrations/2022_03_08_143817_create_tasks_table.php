@@ -13,17 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('activities', function (Blueprint $table) {
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('client_id')
+            $table->foreignId('activity_id')
                 ->references('id')
-                ->on('clients');
+                ->on('activities')
+                ->onDelete('cascade');
+            $table->integer('position');
             $table->string('name');
-            $table->date('start_date');
-            $table->date('end_date');
-            $table->time('start_time');
-            $table->string('repeat');
-            $table->string('days');
+            $table->string('image');
+            $table->string('duration');
+            $table->boolean('sound');
+            $table->boolean('repeat');
             $table->timestamps();
         });
     }
@@ -35,6 +36,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('activities');
+        Schema::dropIfExists('tasks');
     }
 };

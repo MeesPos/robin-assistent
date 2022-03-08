@@ -36,13 +36,13 @@ export default {
                 start_time: '',
                 repeat: '',
                 days: [],
-                steps: this.steps,
+                activity: this.activity,
                 client_id: this.client_id
             })
         }
     },
     props: {
-        steps: {
+        activity: {
             type: Array,
             required: true
         },

@@ -62,7 +62,10 @@ export default {
     },
     methods: {
         submit() {
-            this.activity.steps.post(this.route('activity.create'));
+            console.log(this.activity.steps);
+            this.$inertia.post(this.route('activity.date-time-info'), {
+                'activity': this.activity
+            });
         }
     },
     components: {

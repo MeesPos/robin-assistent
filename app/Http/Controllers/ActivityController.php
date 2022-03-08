@@ -6,6 +6,7 @@ use App\Http\Requests\CreateActivityRequest;
 use App\Models\Activity;
 use App\Services\ActivityJsonService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Inertia\Inertia;
 
 class ActivityController extends Controller
@@ -20,10 +21,10 @@ class ActivityController extends Controller
 
     }
 
-    public function create(): \Inertia\Response
+    public function create(Request $request): \Inertia\Response
     {
-        return Inertia::render('Activities/Create', [
-            'activities' => ActivityJsonService::getAll()
+        return Inertia::render('Activities/DateTimeInfo', [
+            'steps' => json_decode($request->get('activity'))
         ]);
     }
 
@@ -93,8 +94,17 @@ class ActivityController extends Controller
         ]);
     }
 
-    public function dateTimeInfo()
+    public function dateTimeInfo(Request $request)
     {
+        return Redirect::to(route('activity.create', [
+            'activity' => json_encode($request->get('activity'))
+        ]));
+    }
 
+    public function selectActivity()
+    {
+        return Inertia::render('Activities/Create', [
+            'activities' => ActivityJsonService::getAll()
+        ]);
     }
 }

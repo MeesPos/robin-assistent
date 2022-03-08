@@ -34,4 +34,8 @@ Route::get('vue-js-grid', function () {
 
 Route::resource('client', \App\Http\Controllers\ClientController::class);
 Route::get('activity/steps/{unique_key}', [\App\Http\Controllers\ActivityController::class, 'steps']);
-Route::resource('activity', \App\Http\Controllers\ActivityController::class);
+Route::post('activity/date', [\App\Http\Controllers\ActivityController::class, 'dateTimeInfo'])->name('activity.date-time-info');
+Route::get('activity/select-activity', [\App\Http\Controllers\ActivityController::class, 'selectActivity'])->name('activity.select-activity');
+Route::get('activity/create', [\App\Http\Controllers\ActivityController::class, 'create'])->name('activity.create');
+Route::post('activity', [\App\Http\Controllers\ActivityController::class, 'store'])->name('activity.store');
+//Route::resource('activity', \App\Http\Controllers\ActivityController::class);

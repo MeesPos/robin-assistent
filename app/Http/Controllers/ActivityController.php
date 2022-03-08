@@ -85,4 +85,11 @@ class ActivityController extends Controller
     {
         //
     }
+
+    public function steps($unique_key)
+    {
+        return Inertia::render('Activities/Steps', [
+            'activity' => ActivityJsonService::getJson($unique_key)
+        ]);
+    }
 }

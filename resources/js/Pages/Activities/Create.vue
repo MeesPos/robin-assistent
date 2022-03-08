@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button v-for="activity in activities" @click.prevent="submit(activity)">
+        <button v-for="activity in activities" @click.prevent="goToStepsPage(activity)">
             <img :src="activity.image"
                  class="w-20 h-20"
                  :alt="activity.name"
@@ -21,8 +21,8 @@ export default {
         }
     },
     methods: {
-        submit(activity) {
-            console.log(activity);
+        goToStepsPage(activity) {
+            return this.$inertia.get(`/activity/steps/${activity.unique_key}`);
         }
     }
 }

@@ -23,8 +23,12 @@ class ActivityJsonService
         return $activities;
     }
 
-    public static function getJson($unique_key): array
+    public static function getJson($unique_key)
     {
-        return json_decode(file_get_contents(resource_path("json/$unique_key.json")));
+        return json_decode(
+            file_get_contents(
+                resource_path("json/$unique_key.json")
+            )
+        );
     }
 }

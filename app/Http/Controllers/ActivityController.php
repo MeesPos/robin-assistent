@@ -92,4 +92,9 @@ class ActivityController extends Controller
             'activity' => ActivityJsonService::getJson($unique_key)
         ]);
     }
+
+    public function dateTimeInfo()
+    {
+
+    }
 }

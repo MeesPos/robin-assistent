@@ -1,0 +1,28 @@
+{
+    "name": "Test 2",
+    "unique_key": "test2",
+    "image": "https://www.robinassists.me/dashboard/img/activity_icons/2.svg",
+    "steps": [
+        {
+            "image": "https://www.robinassists.me/dashboard/img/pictograms/2.000/2.001_M_EN.png",
+            "name": "Turn on the lights",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "https://www.robinassists.me/dashboard/img/pictograms/2.000/2.002_M_EN.png",
+            "name": "Enter the bathroom",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "https://www.robinassists.me/dashboard/img/pictograms/2.000/2.003_M_EN.png",
+            "name": "Take off your clothes",
+            "duration": "00:00:15",
+            "sound": false,
+            "repeat": false
+        }
+    ]
+}

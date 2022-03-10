@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-slate-background h-screen">
+    <div class="bg-slate-background h-screen font-roboto">
         <TransitionRoot as="template" :show="sidebarOpen">
             <Dialog as="div" class="fixed inset-0 flex z-40 md:hidden" @close="sidebarOpen = false">
                 <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">

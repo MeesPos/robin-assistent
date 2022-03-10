@@ -20,10 +20,16 @@ module.exports = {
                 },
                 'blue': {
                     'border': '#00465A'
+                },
+                'green': {
+                    'dark': '#315120'
                 }
             },
             borderWidth: {
                 '6': '6px'
+            },
+            borderRadius: {
+                '5xl': '2.5rem'
             }
         },
     },

@@ -11,15 +11,24 @@
             <option value="weekly">Weekly</option>
         </select>
 
-        <select v-model="form.days">
-            <option value="monday">Mon</option>
-            <option value="tuesday">Tue</option>
-            <option value="wednesday">Wed</option>
-            <option value="thursday">Thu</option>
-            <option value="friday">Fri</option>
-            <option value="saturday">Sat</option>
-            <option value="sunday">Sun</option>
-        </select>
+        <div class="flex gap-4 flex-row my-8">
+            <div v-for="day in days">
+                <input type="checkbox"
+                       :id="day"
+                       class="hidden"
+                       :ref="day + '_checkbox'"
+                       @click="addDayToArray(day)"
+                >
+
+                <label :for="day"
+                       class="text-white w-20 h-20 flex items-center cursor-pointer text-center bg-black"
+                >
+                    <p class="mx-auto">
+                        {{ day }}
+                    </p>
+                </label>
+            </div>
+        </div>
 
         <input type="submit" value="submit" />
     </form>
@@ -38,7 +47,17 @@ export default {
                 days: [],
                 activity: this.activity,
                 client_id: this.client_id
-            })
+            }),
+            days: {
+                monday: 'Mon',
+                tuesday: 'Tue',
+                wednesday: 'Wed',
+                thursday: 'Thu',
+                friday: 'Fri',
+                saturday: 'Sat',
+                sunday: 'Sun'
+            },
+            selectedDays: []
         }
     },
     props: {
@@ -54,6 +73,13 @@ export default {
         submit() {
             console.log(this.form);
             this.form.post(this.route('activity.store'));
+        },
+        addDayToArray(day) {
+            if (this.$refs[`${day}_checkbox`][0].checked === true) {
+                this.selectedDays.push(day);
+            } else {
+                this.selectedDays.splice(this.selectedDays.indexOf(day), 1);
+            }
         }
     }
 }

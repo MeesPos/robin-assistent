@@ -59,13 +59,13 @@
             </div>
         </div>
 
-        <div>
+        <div class="flex-1">
             <div>
                 <h2 class="font-quantify text-4xl">Planning an activity for {{ client.first_name + ' ' + client.last_name }}</h2>
                 <h3 class="text-base">Choose which activity you want to plan</h3>
             </div>
 
-            <form @submit.prevent="submit" class="mt-8">
+            <form @submit.prevent="submit" class="mt-8 w-full">
                 <div class="flex flex-row gap-x-12 gap-y-8">
                     <div v-for="activity in activities"
                          :class="active === activity.unique_key ? 'border-6 border-blue-base' : ''"
@@ -93,9 +93,21 @@
                     </div>
                 </div>
 
-                <input type="submit"
-                       value="Next"
-                />
+                <div class="grid grid-cols-3">
+                    <div></div>
+
+                    <div>
+
+                    </div>
+
+                    <div class="text-right">
+                        <button type="submit"
+                               class="py-3 px-20 bg-green-dark rounded-lg text-white font-semibold"
+                        >
+                            Next
+                        </button>
+                    </div>
+                </div>
             </form>
         </div>
     </div>

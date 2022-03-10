@@ -79,7 +79,7 @@
             </div>
             <main class="flex-1">
                 <div class="py-6">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+                    <div class="mx-auto px-4 sm:px-6 md:px-8 mx-20">
                         <slot />
                     </div>
                 </div>

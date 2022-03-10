@@ -1,11 +1,11 @@
 <template>
-    <div class="mb-12 mt-6 grid grid-cols-2">
+    <div class="mb-12 mt-6 grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-2 overflow-y-hidden">
         <div>
-            <h1 class="font-quantify text-blue-base text-7xl">Create task</h1>
+            <h1 class="font-quantify text-blue-base text-5xl 2xl:text-7xl">Create task</h1>
             <h3 class="font-base">Create here the task for your client</h3>
         </div>
 
-        <div class="text-right">
+        <div class="mt-4 xl:mt-0 xl:text-right">
             <label style="top: -2px" class="search-label relative mr-8">
                 <input type="text" placeholder="Search Clients" style="padding-top: 0.65rem; padding-bottom: 0.65rem" class="pl-8 pb-2 inline-block border-1 border-black rounded-xl w-72">
 
@@ -26,16 +26,16 @@
     </div>
 
     <div class="flex w-full flex-row gap-16 h-60vh">
-        <div class="w-1/6">
+        <div class="w-4/12 xl:w-3/12">
             <div class="bg-white h-full rounded-5xl">
                 <div class="mx-8 py-8 flex flex-col place-content-center gap-6">
                     <div class="text-center space-y-6">
-                        <h2 class="text-green-dark font-bold text-3xl">{{ client.first_name + ' ' + client.last_name }}</h2>
+                        <h2 class="text-green-dark font-bold text-xl 2xl:text-3xl">{{ client.first_name + ' ' + client.last_name }}</h2>
                         <h4 class="text-base">{{ moment(client.birth_date) }}</h4>
                     </div>
 
                     <div class="space-y-4">
-                        <h2 class="font-bold text-3xl">Patient details</h2>
+                        <h2 class="font-bold text-xl 2xl:text-3xl">Patient details</h2>
 
                         <div class="grid grid-cols-2">
                             <h2>Height</h2>
@@ -59,14 +59,14 @@
             </div>
         </div>
 
-        <div class="flex-1">
+        <div class="flex-1 h-full">
             <div>
-                <h2 class="font-quantify text-4xl">Planning an activity for {{ client.first_name + ' ' + client.last_name }}</h2>
+                <h2 class="font-quantify text-2xl 2xl:text-4xl">Planning an activity for {{ client.first_name + ' ' + client.last_name }}</h2>
                 <h3 class="text-base">Choose which activity you want to plan</h3>
             </div>
 
-            <form @submit.prevent="submit" class="mt-8 w-full">
-                <div class="flex flex-row gap-x-12 gap-y-8 h-full -mb-8">
+            <form @submit.prevent="submit" class="mt-8 w-full xl:h-full">
+                <div class="flex flex-row gap-x-12 gap-y-8 xl:h-full -mb-8">
                     <div v-for="activity in activities"
                          :class="active === activity.unique_key ? 'border-6 border-blue-base' : ''"
                          class="bg-white flex w-32 h-32 justify-center text-center items-center rounded-xl"
@@ -93,10 +93,10 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-3">
-                    <div></div>
+                <div class="grid grid-cols-2 xl:grid-cols-3 xl:mt-0 mt-20">
+                    <div class="hidden xl:block"></div>
 
-                    <div class="flex gap-8 items-center text-right justify-end">
+                    <div class="flex gap-8 items-center text-right xl:justify-end">
                         <div class="w-4 h-4 rounded-full bg-red-dots"></div>
                         <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
                         <div class="w-4 h-4 rounded-full bg-gray-dots"></div>

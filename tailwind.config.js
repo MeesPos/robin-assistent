@@ -39,6 +39,9 @@ module.exports = {
             },
             height: {
                 '60vh': '60vh'
+            },
+            gridTemplateRows: {
+                'auto-1fr': 'auto 1fr'
             }
         },
     },

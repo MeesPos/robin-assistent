@@ -28,31 +28,31 @@
     <div class="flex w-full flex-row gap-16 h-60vh">
         <div class="w-4/12 xl:w-3/12">
             <div class="bg-white h-full rounded-5xl">
-                <div class="mx-8 py-8 flex flex-col place-content-center gap-6">
+                <div class="mx-8 py-8 grid grid-rows-auto-1fr h-full gap-6">
                     <div class="text-center space-y-6">
                         <h2 class="text-green-dark font-bold text-xl 2xl:text-3xl">{{ client.first_name + ' ' + client.last_name }}</h2>
                         <h4 class="text-base">{{ moment(client.birth_date) }}</h4>
                     </div>
 
-                    <div class="space-y-4">
+                    <div class="space-y-8 mt-12">
                         <h2 class="font-bold text-xl 2xl:text-3xl">Patient details</h2>
 
-                        <div class="grid grid-cols-2">
-                            <h2>Height</h2>
+                        <div class="grid grid-cols-2 items-center">
+                            <h2 class="text-xl">Gender</h2>
 
-                            <h3 class="text-right">170 cm</h3>
+                            <h3 class="text-right">{{ client.gender }}</h3>
                         </div>
 
-                        <div class="grid grid-cols-2">
-                            <h2>Weight</h2>
+                        <div class="grid grid-cols-2 items-center">
+                            <h2 class="text-xl">Age</h2>
 
-                            <h3 class="text-right">50 kg</h3>
+                            <h3 class="text-right">{{ countAge() }}</h3>
                         </div>
 
-                        <div class="grid grid-cols-2">
-                            <h2>Height</h2>
+                        <div class="grid grid-cols-2 items-center">
+                            <h2 class="text-xl">Panic button</h2>
 
-                            <h3 class="text-right">170 cm</h3>
+                            <h3 class="text-right">{{ client.panic_button }}</h3>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 <div class="grid grid-cols-2 xl:grid-cols-3 xl:mt-0 mt-20">
                     <div class="hidden xl:block"></div>
 
-                    <div class="flex gap-8 items-center text-right xl:justify-end">
+                    <div class="flex gap-8 items-center text-right xl:justify-center">
                         <div class="w-4 h-4 rounded-full bg-red-dots"></div>
                         <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
                         <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
@@ -148,6 +148,9 @@ export default {
         },
         moment(date) {
             return moment(date).format('DD MMMM YYYY');
+        },
+        countAge() {
+            return moment().diff(moment(this.client.birth_date, 'YYYY-MM-DD'), 'years');
         }
     },
     components: {

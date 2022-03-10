@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="bg-slate-background h-screen">
         <TransitionRoot as="template" :show="sidebarOpen">
             <Dialog as="div" class="fixed inset-0 flex z-40 md:hidden" @close="sidebarOpen = false">
                 <TransitionChild as="template" enter="transition-opacity ease-linear duration-300" enter-from="opacity-0" enter-to="opacity-100" leave="transition-opacity ease-linear duration-300" leave-from="opacity-100" leave-to="opacity-0">
@@ -79,9 +79,6 @@
             </div>
             <main class="flex-1">
                 <div class="py-6">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                        <h1 class="text-2xl font-semibold text-gray-900">Dashboard</h1>
-                    </div>
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
                         <slot />
                     </div>

@@ -1,8 +1,12 @@
 <template>
+    <h1>Planning an activity for {{ client.first_name + ' ' + client.last_name }}</h1>
+    <h3>Create here the task for your client</h3>
+
     <form @submit.prevent="submit">
-        <div class="flex flex-row">
+        <div class="flex flex-row gap-x-12 gap-y-8">
             <div v-for="activity in activities"
-                 :class="active === activity.unique_key ? 'border' : ''"
+                 :class="active === activity.unique_key ? 'border-6 border-blue-border' : ''"
+                 class="bg-white flex w-32 h-32 justify-center text-center items-center rounded-xl"
             >
                 <input class="hidden"
                        :id="'radio_' + activity.unique_key"
@@ -15,11 +19,13 @@
                        :for="'radio_' + activity.unique_key"
                 >
                     <img :src="activity.image"
-                         class="w-20 h-20"
+                         class="w-20 h-20 mx-auto"
                          :alt="activity.name"
                     >
 
-                    <h2 v-text="activity.name" />
+                    <h2 v-text="activity.name"
+                        class="font-bold mt-1"
+                    />
                 </label>
             </div>
         </div>

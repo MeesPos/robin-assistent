@@ -46,20 +46,18 @@ export default {
             type: Array,
             required: true
         },
-        client_id: {
+        client: {
+            type: Array,
             required: true
         }
     },
     methods: {
-        goToStepsPage(activity) {
-            return this.$inertia.get(`/activity/steps/${activity.unique_key}/${this.client_id}`);
-        },
         setActive(activity) {
             this.active = activity;
         },
         submit() {
             if (this.active !== '') {
-                return this.$inertia.get(`/activity/steps/${this.active}/${this.client_id}`);
+                return this.$inertia.get(`/activity/steps/${this.active}/${this.client.id}`);
             }
         }
     }

@@ -72,7 +72,7 @@ class ActivityController extends Controller
     {
         return Inertia::render('Activities/Create', [
             'activities' => ActivityJsonService::getAll(),
-            'client_id' => Client::query()->first()->getKey()
+            'client' => Client::query()->first()
         ]);
     }
 }

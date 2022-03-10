@@ -23,6 +23,12 @@ module.exports = {
                 },
                 'green': {
                     'dark': '#315120'
+                },
+                'gray': {
+                    'dots': '#CCCCCC'
+                },
+                'red': {
+                    'dots': '#6F1C18'
                 }
             },
             borderWidth: {
@@ -30,6 +36,9 @@ module.exports = {
             },
             borderRadius: {
                 '5xl': '2.5rem'
+            },
+            height: {
+                '60vh': '60vh'
             }
         },
     },

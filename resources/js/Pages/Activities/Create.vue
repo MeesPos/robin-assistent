@@ -1,5 +1,5 @@
 <template>
-    <div class="mb-12 grid grid-cols-2">
+    <div class="mb-12 mt-6 grid grid-cols-2">
         <div>
             <h1 class="font-quantify text-blue-base text-7xl">Create task</h1>
             <h3 class="font-base">Create here the task for your client</h3>
@@ -25,7 +25,7 @@
         </div>
     </div>
 
-    <div class="flex w-full flex-row h-3/5 gap-16">
+    <div class="flex w-full flex-row gap-16 h-60vh">
         <div class="w-1/6">
             <div class="bg-white h-full rounded-5xl">
                 <div class="mx-8 py-8 flex flex-col place-content-center gap-6">
@@ -66,7 +66,7 @@
             </div>
 
             <form @submit.prevent="submit" class="mt-8 w-full">
-                <div class="flex flex-row gap-x-12 gap-y-8">
+                <div class="flex flex-row gap-x-12 gap-y-8 h-full -mb-8">
                     <div v-for="activity in activities"
                          :class="active === activity.unique_key ? 'border-6 border-blue-base' : ''"
                          class="bg-white flex w-32 h-32 justify-center text-center items-center rounded-xl"
@@ -96,8 +96,10 @@
                 <div class="grid grid-cols-3">
                     <div></div>
 
-                    <div>
-
+                    <div class="flex gap-8 items-center text-right justify-end">
+                        <div class="w-4 h-4 rounded-full bg-red-dots"></div>
+                        <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
+                        <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
                     </div>
 
                     <div class="text-right">

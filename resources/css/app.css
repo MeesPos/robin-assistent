@@ -1,3 +1,12 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@font-face {
+    font-family: 'Quantify';
+    src: url('../../public/fonts/Quantify.ttf') format('truetype');
+}
+
+.font-quantify {
+    font-family: 'Quantify';
+}

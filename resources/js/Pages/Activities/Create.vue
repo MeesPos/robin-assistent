@@ -1,5 +1,5 @@
 <template>
-    <h1>Planning an activity for {{ client.first_name + ' ' + client.last_name }}</h1>
+    <h1 class="font-quantify">Planning an activity for {{ client.first_name + ' ' + client.last_name }}</h1>
     <h3>Create here the task for your client</h3>
 
     <form @submit.prevent="submit">

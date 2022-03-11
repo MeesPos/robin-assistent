@@ -35,7 +35,8 @@ module.exports = {
                 '6': '6px'
             },
             borderRadius: {
-                '5xl': '2.5rem'
+                '5xl': '2.5rem',
+                '10': '0.625rem'
             },
             height: {
                 '60vh': '60vh'

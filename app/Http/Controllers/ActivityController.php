@@ -17,7 +17,8 @@ class ActivityController extends Controller
     {
         return Inertia::render('Activities/DateTimeInfo', [
             'activity' => json_decode($request->get('activity')),
-            'client_id' => $request->get('client_id')
+            'client' => Client::query()
+                ->find($request->get('client_id'))
         ]);
     }
 

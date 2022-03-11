@@ -67,9 +67,8 @@
 
         <div class="flex-1 h-full">
             <div>
-                <h2 class="font-quantify text-2xl 2xl:text-4xl">Planning an activity for
-                    {{ client.first_name + ' ' + client.last_name }}</h2>
-                <h3 class="text-base">Choose which activity you want to plan</h3>
+                <h2 class="font-quantify text-2xl 2xl:text-4xl">Select the steps</h2>
+                <h3 class="text-base">Make the steps the client need.</h3>
             </div>
 
             <form id="stepsForm" @submit.prevent="submit" class="h-full">
@@ -194,7 +193,7 @@ export default {
         submit() {
             this.$inertia.post(this.route('activity.date-time-info'), {
                 'activity': this.activity,
-                'client_id': this.client_id
+                'client_id': this.client.id
             });
         },
         moment(date) {

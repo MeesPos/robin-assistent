@@ -146,12 +146,12 @@ export default {
                 return this.$inertia.get(`/activity/steps/${this.active}/${this.client.id}`);
             }
         },
-            moment(date) {
-                return moment(date).format('DD MMMM YYYY');
-            },
-            countAge() {
-                return moment().diff(moment(this.client.birth_date, 'YYYY-MM-DD'), 'years');
-            }
+        moment(date) {
+            return moment(date).format('DD MMMM YYYY');
+        },
+        countAge() {
+            return moment().diff(moment(this.client.birth_date, 'YYYY-MM-DD'), 'years');
+        }
     },
     components: {
         moment

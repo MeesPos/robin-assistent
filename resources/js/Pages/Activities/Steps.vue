@@ -40,9 +40,11 @@
 
 <script>
 import Draggable from "vuedraggable";
+import AppLayout from "../../Layouts/AppLayout";
 
 export default {
     name: "Steps",
+    layout: AppLayout,
     data() {
         return {
             activitySteps: {

@@ -56,7 +56,8 @@ class ActivityController extends Controller
     {
         return Inertia::render('Activities/Steps', [
             'activity' => ActivityJsonService::getJson($unique_key),
-            'client_id' => $client_id
+            'client' => Client::query()
+                ->find($client_id)
         ]);
     }
 

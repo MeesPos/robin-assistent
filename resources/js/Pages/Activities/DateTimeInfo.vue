@@ -73,7 +73,7 @@
                         Start date
                     </label>
                     <br>
-                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-5/6 mt-1"
                            id="start_date"
                            type="date"
                            v-model="form.start_date"
@@ -87,7 +87,7 @@
                         End date
                     </label>
                     <br>
-                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-5/6 mt-1"
                            id="end_date"
                            type="date"
                            v-model="form.end_date"
@@ -101,7 +101,7 @@
                         Start time
                     </label>
                     <br>
-                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-5/6 mt-1"
                            id="start_date"
                            type="time"
                            v-model="form.start_time"
@@ -115,11 +115,11 @@
                         Repeat
                     </label>
                     <br>
-                    <select class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                    <select class="border-none pl-6 rounded-10 font-bold py-3 w-5/6 mt-1"
                             id="repeat"
                             v-model="form.repeat"
                     >
-                        <option value="weekly">
+                        <option value="weekly" selected>
                             Weekly
                         </option>
                         <option value="monthly">
@@ -128,9 +128,9 @@
                     </select>
                 </div>
 
-                <div>
-                    <label>Days</label>
-                    <div class="flex gap-4 flex-row">
+                <div class="mt-10">
+                    <label class="text-md font-bold">Days</label>
+                    <div class="flex gap-4 flex-row mt-1">
                         <div v-for="day in days">
                             <input type="checkbox"
                                    :id="day"
@@ -140,7 +140,8 @@
                             >
 
                             <label :for="day"
-                                   class="text-white w-20 h-20 flex items-center cursor-pointer text-center bg-black"
+                                   class="font-bold text-md w-16 h-14 flex items-center cursor-pointer text-center rounded-10"
+                                   :class="selectedDays.includes(day) ? 'bg-blue-base text-white' : 'bg-white text-black'"
                             >
                                 <p class="mx-auto">
                                     {{ day }}
@@ -149,8 +150,6 @@
                         </div>
                     </div>
                 </div>
-
-                <input type="submit" value="submit" />
             </form>
         </div>
     </div>

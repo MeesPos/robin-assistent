@@ -65,7 +65,7 @@
                 <h3 class="text-base">Choose which activity you want to plan</h3>
             </div>
 
-            <form @submit.prevent="submit" class="grid grid-cols-2 space-y-8 mt-10">
+            <form @submit.prevent="submit" class="grid grid-cols-2 mt-10">
                 <div>
                     <label class="font-bold text-md"
                            for="start_date"
@@ -73,7 +73,7 @@
                         Start date
                     </label>
                     <br>
-                    <input class="border-none rounded-10 font-bold py-3 w-4/6 mt-1"
+                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
                            id="start_date"
                            type="date"
                            v-model="form.start_date"
@@ -81,26 +81,56 @@
                 </div>
 
                 <div>
-                    <label for="end_date">End date</label>
-                    <input id="end_date" type="date" v-model="form.end_date" />
+                    <label class="font-bold text-md"
+                        for="end_date"
+                    >
+                        End date
+                    </label>
+                    <br>
+                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                           id="end_date"
+                           type="date"
+                           v-model="form.end_date"
+                    />
                 </div>
 
-                <div>
-                    <label for="start_time">Start time</label>
-                    <input id="start_date" type="time" v-model="form.start_time" />
+                <div class="mt-10">
+                    <label class="font-bold text-md"
+                           for="start_time"
+                    >
+                        Start time
+                    </label>
+                    <br>
+                    <input class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                           id="start_date"
+                           type="time"
+                           v-model="form.start_time"
+                    />
                 </div>
 
-                <div>
-                    <label for="repeat">Repeat</label>
-                    <select id="repeat" v-model="form.repeat">
-                        <option value="weekly">Weekly</option>
-                        <option value="monthly">Monthly</option>
+                <div class="mt-10">
+                    <label class="font-bold text-md"
+                        for="repeat"
+                    >
+                        Repeat
+                    </label>
+                    <br>
+                    <select class="border-none pl-6 rounded-10 font-bold py-3 w-4/6 mt-1"
+                            id="repeat"
+                            v-model="form.repeat"
+                    >
+                        <option value="weekly">
+                            Weekly
+                        </option>
+                        <option value="monthly">
+                            Monthly
+                        </option>
                     </select>
                 </div>
 
                 <div>
                     <label>Days</label>
-                    <div class="flex gap-4 flex-row my-8">
+                    <div class="flex gap-4 flex-row">
                         <div v-for="day in days">
                             <input type="checkbox"
                                    :id="day"

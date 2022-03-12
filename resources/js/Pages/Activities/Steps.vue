@@ -32,7 +32,7 @@
 
     <div class="flex w-full flex-row gap-16">
         <div class="w-4/12 xl:w-3/12">
-            <div class="bg-white h-full rounded-5xl h-60vh">
+            <div class="bg-white rounded-5xl h-full xl:h-60vh h-fit-content h-[80vh]">
                 <div class="mx-8 py-8 grid grid-rows-auto-1fr h-full gap-6">
                     <div class="text-center space-y-6">
                         <h2 class="text-green-dark font-bold text-xl 2xl:text-3xl">
@@ -41,24 +41,24 @@
                     </div>
 
                     <div class="space-y-8 mt-12">
-                        <h2 class="font-bold text-xl 2xl:text-3xl">Patient details</h2>
+                        <h2 class="font-bold text-xl 2xl:text-3xl xl:text-left text-center">Patient details</h2>
 
-                        <div class="grid grid-cols-2 items-center">
-                            <h2 class="text-xl">Gender</h2>
+                        <div class="grid xl:grid-cols-2 grid-cols-1 items-center">
+                            <h2 class="text-center xl:text-left text-xl">Gender</h2>
 
-                            <h3 class="text-right">{{ client.gender }}</h3>
+                            <h3 class="text-center xl:text-right xl:mt-0 mt-1">{{ client.gender }}</h3>
                         </div>
 
-                        <div class="grid grid-cols-2 items-center">
-                            <h2 class="text-xl">Age</h2>
+                        <div class="grid xl:grid-cols-2 grid-cols-1 items-center">
+                            <h2 class="text-center xl:text-left text-xl">Age</h2>
 
-                            <h3 class="text-right">{{ countAge() }}</h3>
+                            <h3 class="text-center xl:text-right xl:mt-0 mt-1">{{ countAge() }}</h3>
                         </div>
 
-                        <div class="grid grid-cols-2 items-center">
-                            <h2 class="text-xl">Panic button</h2>
+                        <div class="grid xl:grid-cols-2 grid-cols-1 items-center">
+                            <h2 class="text-center xl:text-left text-xl">Panic button</h2>
 
-                            <h3 class="text-right">{{ client.panic_button }}</h3>
+                            <h3 class="text-center xl:text-right xl:mt-0 mt-1">{{ client.panic_button }}</h3>
                         </div>
                     </div>
                 </div>

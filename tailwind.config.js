@@ -29,6 +29,9 @@ module.exports = {
                 },
                 'red': {
                     'dots': '#6F1C18'
+                },
+                'niagara': {
+                    'base': '#21A086'
                 }
             },
             borderWidth: {
@@ -36,13 +39,16 @@ module.exports = {
             },
             borderRadius: {
                 '5xl': '2.5rem',
-                '10': '0.625rem'
+                '10': '0.625rem',
+                'sidebar': '0 129px 129px 0',
+                'active-icon': '10px 10px 0 10px'
             },
             height: {
                 '60vh': '60vh'
             },
             gridTemplateRows: {
-                'auto-1fr': 'auto 1fr'
+                'auto-1fr': 'auto 1fr',
+                'auto-1fr-1fr': 'auto 1fr 1fr'
             }
         },
     },

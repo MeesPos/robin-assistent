@@ -48,23 +48,25 @@
         </TransitionRoot>
 
         <!-- Static sidebar for desktop -->
-        <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+        <div class="hidden md:flex md:w-80 md:flex-col md:fixed md:inset-y-0">
             <!-- Sidebar component, swap this element with another sidebar if you like -->
-            <div class="flex-1 flex flex-col min-h-0 bg-gray-800">
-                <div class="grid items-center h-full grid-rows-3 justify-between pt-5 pb-4 overflow-y-auto">
-                    <div class="flex self-start flex-shrink-0 px-4">
-                        <img class="w-full" src="/images/logo.png" alt="Workflow" />
+            <div class="flex-1 flex flex-col min-h-0 bg-blue-base rounded-sidebar">
+                <div class="grid grid-rows-auto-1fr-1fr h-full pt-5 pb-4 overflow-y-auto">
+                    <div class="flex self-start -ml-8 justify-center flex-shrink-0 px-4">
+                        <img class="w-1/2 mt-8" src="/images/logo.png" alt="Workflow" />
                     </div>
-                    <nav class="mt-5 flex-1 px-2 space-y-2">
-                        <a v-for="item in navigation.middle" :key="item.name" :href="item.href" :class="[item.current ? 'text-white' : 'text-white', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
-                            <component :is="item.icon" :class="[item.current ? 'text-gray-300' : 'text-white', 'mr-3 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
-                            <p class="mt-1">{{ item.name }}</p>
+                    <nav class="flex-1 px-2 space-y-2 mt-12">
+                        <h4 class="text-base text-white font-medium px-2">Home</h4>
+                        <a v-for="item in navigation.middle" :key="item.name" :href="item.href" :class="[item.current ? 'text-white font-medium bg-niagara-base py-3 w-5/6 justify-right ml-[25%] rounded-10' : 'text-white', 'group flex items-center px-2 py-2 text-lg rounded-md']">
+                            <component :is="item.icon" :class="[item.current ? 'text-black bg-white w-10 h-10 p-2 rounded-active-icon -ml-6' : 'text-white', 'mr-3 flex-shrink-0 h-10 w-10']" aria-hidden="true" />
+                            <p class="mt-1" :class="[item.current ? 'ml-3 text-xl' : '']">{{ item.name }}</p>
                         </a>
                     </nav>
-                    <nav class="mt-5 flex-1 px-2 space-y-2">
-                        <a v-for="item in navigation.bottom" :key="item.name" :href="item.href" :class="[item.current ? 'text-white' : 'text-white', 'group flex items-center px-2 py-2 text-base font-medium rounded-md']">
-                            <component :is="item.icon" :class="[item.current ? 'text-gray-300' : 'text-white', 'mr-3 flex-shrink-0 h-6 w-6']" aria-hidden="true" />
-                            <p class="mt-1">{{ item.name }}</p>
+                    <nav class="mt-5 flex-1 px-2 space-y-2 items-center">
+                        <h4 class="text-base text-white font-medium px-2">Your account</h4>
+                        <a v-for="item in navigation.bottom" :key="item.name" :href="item.href" :class="[item.current ? 'text-white font-medium bg-niagara-base py-3 w-5/6 justify-right ml-[25%] rounded-10' : 'text-white', 'group flex items-center px-2 py-2 text-lg rounded-md']">
+                            <component :is="item.icon" :class="[item.current ? 'text-black bg-white w-10 h-10 p-2 rounded-active-icon -ml-6' : 'text-white', 'mr-3 flex-shrink-0 h-10 w-10']" aria-hidden="true" />
+                            <p class="mt-1" :class="[item.current ? 'ml-3 text-xl' : '']">{{ item.name }}</p>
                         </a>
                     </nav>
                 </div>

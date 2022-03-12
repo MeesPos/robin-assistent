@@ -41,7 +41,7 @@ class ActivityController extends Controller
             Task::query()
                 ->create([
                     'activity_id' => $activity->getKey(),
-                    'position' => $key,
+                    'position' => $key + 1,
                     'name' => $step['name'],
                     'image' => $step['image'],
                     'duration' => $step['duration'],

@@ -1,11 +1,11 @@
 <template>
-    <div class="mb-12 mt-6 grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-2 overflow-y-hidden">
+    <div class="mb-12 mt-6 grid grid-rows-2 xl:grid-rows-1 xl:grid-cols-2 overflow-y-hidden" style="width: 94%">
         <div>
             <h1 class="font-quantify text-blue-base text-5xl 2xl:text-7xl">Create task</h1>
             <h3 class="font-base">Create here the task for your client</h3>
         </div>
 
-        <div class="mt-4 xl:mt-0 xl:">
+        <div class="mt-4 xl:mt-0 xl:text-right">
             <label style="top: -2px" class="search-label relative mr-8">
                 <input type="text" placeholder="Search Clients" style="padding-top: 0.65rem; padding-bottom: 0.65rem" class="pl-8 pb-2 inline-block border-1 border-black rounded-xl w-72">
 
@@ -65,7 +65,7 @@
                 <h3 class="text-base">Choose which activity you want to plan</h3>
             </div>
 
-            <form @submit.prevent="submit" class="grid grid-cols-2 mt-10">
+            <form @submit.prevent="submit" class="grid grid-cols-2 mt-10" id="dateForm">
                 <div>
                     <label class="font-bold text-md"
                            for="start_date"
@@ -153,6 +153,24 @@
             </form>
         </div>
     </div>
+
+    <div class="grid grid-cols-2 xl:grid-cols-3 xl:mt-0 mt-20" style="width: 94%">
+        <div class="hidden xl:block"></div>
+
+        <div class="flex gap-8 items-center text-right xl:justify-center">
+            <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
+            <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
+            <div class="w-4 h-4 rounded-full bg-red-dots"></div>
+        </div>
+
+        <div class="text-right">
+            <button type="submit" form="dateForm"
+                    class="py-3 px-20 bg-green-dark rounded-lg text-white font-semibold"
+            >
+                Create task
+            </button>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -169,7 +187,7 @@ export default {
                 end_date: '',
                 start_time: '',
                 repeat: '',
-                days: [],
+                days: this.selectedDays,
                 activity: this.activity,
                 client_id: this.client.id
             }),
@@ -197,8 +215,14 @@ export default {
     },
     methods: {
         submit() {
-            console.log(this.form);
-            this.form.post(this.route('activity.store'));
+            this.form = {
+                ...this.form,
+                days: this.selectedDays
+            }
+            console.log(this.form, this.selectedDays);
+            this.form.post(this.route('activity.store'), {
+                days: this.selectedDays
+            });
         },
         addDayToArray(day) {
             if (this.$refs[`${day}_checkbox`][0].checked === true) {

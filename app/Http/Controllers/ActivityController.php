@@ -34,7 +34,7 @@ class ActivityController extends Controller
                 'end_date' => $validated['end_date'],
                 'start_time' => $validated['start_time'],
                 'repeat' => $validated['repeat'],
-                'days' => $validated['days']
+                'days' => json_encode($validated['days'])
         ]);
 
         foreach ($request->get('activity')['steps'] as $key => $step) {

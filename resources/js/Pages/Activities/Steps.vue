@@ -71,7 +71,7 @@
                 <h3 class="text-base">Make the steps the client need.</h3>
             </div>
 
-            <form id="stepsForm" @submit.prevent="submit" class="h-full">
+            <form id="stepsForm" @submit.prevent="submit" class="h-full mt-8">
                 <div class="flex flex-row flex-wrap gap-6">
                     <draggable
                         :list="activity.steps"
@@ -138,23 +138,23 @@
                     </draggable>
                 </div>
             </form>
-            <div class="grid grid-cols-2 xl:grid-cols-3 xl:mt-0 mt-20">
-                <div class="hidden xl:block"></div>
+        </div>
+    </div>
+    <div class="grid grid-cols-2 xl:grid-cols-3 xl:mt-0 mt-20">
+        <div class="hidden xl:block"></div>
 
-                <div class="flex gap-8 items-center text-right xl:justify-center">
-                    <div class="w-4 h-4 rounded-full bg-red-dots"></div>
-                    <div class="w-4 h-4 rounded-full bg-red-dots"></div>
-                    <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
-                </div>
+        <div class="flex gap-8 items-center text-right xl:justify-center">
+            <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
+            <div class="w-4 h-4 rounded-full bg-red-dots"></div>
+            <div class="w-4 h-4 rounded-full bg-gray-dots"></div>
+        </div>
 
-                <div class="text-right">
-                    <button type="submit" form="stepsForm"
-                            class="py-3 px-20 bg-green-dark rounded-lg text-white font-semibold"
-                    >
-                        Next
-                    </button>
-                </div>
-            </div>
+        <div class="text-right">
+            <button type="submit" form="stepsForm"
+                    class="py-3 px-20 bg-green-dark rounded-lg text-white font-semibold"
+            >
+                Next
+            </button>
         </div>
     </div>
 </template>

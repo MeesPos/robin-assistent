@@ -81,7 +81,7 @@
                         <label class="cursor-pointer"
                                :for="'radio_' + activity.unique_key"
                         >
-                            <img :src="activity.image"
+                            <img :src="`/images/activities/${activity.unique_key}/` + activity.image"
                                  class="w-20 h-20 mx-auto"
                                  :alt="activity.name"
                             >

@@ -1,0 +1,77 @@
+{
+    "name": "Wash your face",
+    "unique_key": "wash-your-face",
+    "image": "icon.png",
+    "steps": [
+        {
+            "image": "1.png",
+            "name": "Turn on the lights",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "2.png",
+            "name": "Enter the bathroom",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "3.png",
+            "name": "Put water in the sink",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "4.png",
+            "name": "Make your face wet",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "5.png",
+            "name": "Put soap on your face",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "6.png",
+            "name": "Wash your face with water",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "7.png",
+            "name": "Turn off the tap",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "8.png",
+            "name": "Dry yourself with the towel",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "9.png",
+            "name": "Exit the bathroom",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        },
+        {
+            "image": "10.png",
+            "name": "Turn off the lights",
+            "duration": "00:00:10",
+            "sound": false,
+            "repeat": false
+        }
+    ]
+}

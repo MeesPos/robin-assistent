@@ -83,7 +83,7 @@
                         <template #item="{ element, index }">
                             <div class="bg-white rounded-10 cursor-move w-80">
                                 <div class="">
-                                    <img :src="element.image" :alt="element.name" class="mx-auto w-2/5 h-2/5"/>
+                                    <img :src="`/images/activities/${activity.unique_key}/tasks/` + element.image" :alt="element.name" class="mx-auto w-32 h-32 object-contain"/>
                                 </div>
 
                                 <div class="my-4 ml-3 flex gap-2 items-center">

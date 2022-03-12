@@ -81,7 +81,7 @@
                         tag="transition-group"
                     >
                         <template #item="{ element, index }">
-                            <div class="bg-white rounded-10 cursor-move">
+                            <div class="bg-white rounded-10 cursor-move w-80">
                                 <div class="">
                                     <img :src="element.image" :alt="element.name" class="mx-auto w-2/5 h-2/5"/>
                                 </div>

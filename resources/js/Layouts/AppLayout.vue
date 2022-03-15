@@ -51,7 +51,7 @@
         <div class="hidden md:flex md:w-80 md:flex-col md:fixed md:inset-y-0">
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex-1 flex flex-col min-h-0 bg-blue-base rounded-sidebar">
-                <div class="grid grid-rows-auto-1fr-1fr h-full pt-5 pb-4 overflow-y-auto">
+                <div class="grid grid-rows-auto-1fr-1fr h-full pt-5 pb-4 overflow-y-auto overflow-x-hidden">
                     <div class="flex self-start -ml-8 justify-center flex-shrink-0 px-4">
                         <img class="w-1/2 mt-8" src="/images/logo.png" alt="Workflow" />
                     </div>

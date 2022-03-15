@@ -35,7 +35,7 @@ Add the right database credentials in the ```.env``` file
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
-DB_DATABASE=de_koopsom
+DB_DATABASE=robin-assists
 DB_USERNAME=root
 DB_PASSWORD=
 ```
@@ -49,6 +49,6 @@ MAIL_PORT=1025
 MAIL_USERNAME=null
 MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS=noreply@de-koopsom.nl
+MAIL_FROM_ADDRESS=noreply@robinassists.me
 MAIL_FROM_NAME="${APP_NAME}"
 ```

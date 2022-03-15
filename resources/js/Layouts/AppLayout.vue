@@ -127,13 +127,13 @@
                             name: 'Dashboard',
                             href: '#',
                             icon: HomeIcon,
-                            current: true
+                            current: false
                         },
                         {
                             name: 'Clients',
                             href: '#',
                             icon: UsersIcon,
-                            current: false
+                            current: true
                         },
                         {
                             name: 'Agenda',

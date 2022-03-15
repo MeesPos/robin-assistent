@@ -94,15 +94,19 @@
     import { defineComponent, ref } from 'vue'
     import { Dialog, DialogOverlay, TransitionChild, TransitionRoot } from '@headlessui/vue'
     import {
-        CalendarIcon,
-        HomeIcon,
         MenuIcon,
-        UsersIcon,
+        CalendarIcon,
         XIcon,
-        UserCircleIcon,
         QuestionMarkCircleIcon,
-        LogoutIcon
+        LogoutIcon,
+        ChatIcon
     } from '@heroicons/vue/outline'
+
+    import {
+        HomeIcon,
+        UserIcon,
+        UserCircleIcon
+    } from '@heroicons/vue/solid'
 
     export default defineComponent({
         props: {
@@ -132,13 +136,19 @@
                         {
                             name: 'Clients',
                             href: '#',
-                            icon: UsersIcon,
+                            icon: UserIcon,
                             current: true
                         },
                         {
                             name: 'Agenda',
                             href: '#',
                             icon: CalendarIcon,
+                            current: false
+                        },
+                        {
+                            name: 'Messages',
+                            href: '#',
+                            icon: ChatIcon,
                             current: false
                         }
                     ],

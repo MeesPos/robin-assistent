@@ -72,7 +72,7 @@
             </div>
 
             <form id="stepsForm" @submit.prevent="submit" class="h-full mt-8">
-                <div class="flex flex-row flex-wrap gap-6">
+                <div class="flex flex-row flex-wrap gap-6 grid grid-cols-3">
                     <draggable
                         :list="activity.steps"
                         item-key="name"
